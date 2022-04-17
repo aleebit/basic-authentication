@@ -6,6 +6,7 @@ import {
         , ProfileOutlined
         , FileProtectOutlined 
         } from'@ant-design/icons';
+import { MenuItem } from '@aws-amplify/ui-react';
 
 const Nav = ({ current }) => {
   return (
@@ -45,6 +46,17 @@ const Nav = ({ current }) => {
                 >
                 <FileProtectOutlined />Protected
                 </Link>
+            </Menu.Item>
+
+            <Menu.Item
+              key='morepublic'
+            >
+              <Link
+                to='/morepublic'
+              >
+                <ProfileOutlined />
+                MorePublic
+              </Link>
             </Menu.Item>
       </Menu>
     </div>

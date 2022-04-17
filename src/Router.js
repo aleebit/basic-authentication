@@ -15,6 +15,7 @@ import Nav from './Nav'
 import Public from './Public'
 import Profile from './Profile'
 import Protected from './Protected'
+import MorePublic from './MorePublic';
 
 const Router = () => {
 
@@ -61,6 +62,10 @@ const Router = () => {
             />
             <Route 
                 element={<Public/>}
+            />
+            <Route 
+                exact path="/morepublic" 
+                element={<MorePublic />} 
             />
       </Routes>
     </HashRouter>

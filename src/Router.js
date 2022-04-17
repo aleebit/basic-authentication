@@ -7,7 +7,7 @@ import
 
 import { 
     HashRouter
-    , Switch
+    , Routes
     , Route 
 } from 'react-router-dom';
 
@@ -43,26 +43,26 @@ const Router = () => {
       <Nav 
         current={current} 
       />
-      <Switch>
+      <Routes>
             <Route 
                 exact
                 path="/" 
-                component={Public}
+                element={<Public/>}
             />
             <Route 
                 exact 
                 path="/protected" 
-                component={Protected} 
+                element={<Protected/>} 
             />
             <Route 
                 exact 
                 path="/profile" 
-                component={Profile}
+                element={<Profile/>}
             />
             <Route 
-                component={Public}
+                element={<Public/>}
             />
-      </Switch>
+      </Routes>
     </HashRouter>
   );
 };

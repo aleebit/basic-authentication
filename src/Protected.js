@@ -5,21 +5,24 @@ import
 
 import { Auth } from 'aws-amplify';
 import Container from './Container';
+import { useNavigate } from 'react-router-dom';
 
 // Functional component implemented as a const with a multi statement lambda.
-const Protected = ({history}) => {
+const Protected = () => {
+
+    const nav = useNavigate();
 
   useEffect(
       () => {
           // Redirect to the profile page.
             Auth.currentAuthenticatedUser().catch(
                 () => {
-                    history.push('/profile')
+                    nav('/profile')
                 }
             );
         }
         , []
-    );
+     );
 
     // Return the JSX.
     return (
@@ -29,6 +32,6 @@ const Protected = ({history}) => {
             </h1>
         </Container>
     );
-}
+    }
 
 export default Protected;
